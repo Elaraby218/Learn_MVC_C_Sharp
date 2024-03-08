@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Permissions;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -16,6 +17,23 @@ namespace WebApplication1.Controllers
             //return View("Index",DeplistModel);
             return View(DeplistModel);  // he will go and search for view with the same name as the action
             //return View("Index") // view = index , model = null 
+        }
+
+        [HttpGet]
+        public IActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost]
+       public IActionResult saveNew(Department dep) 
+        {
+            if(dep.Name!=null)
+            {
+                entity.Departments.Add(dep);
+                entity.SaveChanges();
+            }
+            return View("New");
         }
     }
 }
