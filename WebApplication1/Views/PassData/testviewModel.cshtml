@@ -1,0 +1,29 @@
+﻿@model Employee_Message_BranchesList_ViweModel
+
+@{
+    ViewData["Title"] = "testviewModel";
+}
+
+<h1> @ViewData["lala"] </h1>
+<h1> @ViewData["lala"] </h1>
+
+
+<h1>testviewModel</h1>
+<div style="color: @Model.Color;">
+    @Model.EmpName
+    <br />
+
+    @Model.EmpID
+    <br />
+
+    <select class="form-control" name="branch">
+        @foreach (var item in Model.Branches)
+        {
+            <option>@item</option>
+            <option>@item</option>
+
+        }
+    </select>
+
+    @(Model.Temp + 10)
+</div>

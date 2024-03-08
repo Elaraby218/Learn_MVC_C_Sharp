@@ -1,0 +1,26 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "testviewdata";
+}
+
+<h1>testviewdata</h1>
+<h2 style="background-color: @ViewData["Color"]"> @Model.Name </h2>
+
+
+<h3>Message : @ViewData["Message"]</h3>
+<select class="form-control">
+    @foreach(var item in (List<string>)ViewData["brch"])
+    {
+        <option>@item</option>
+    }
+</select>
+
+<!--VeiwBag-->
+<select class="form-control">
+    @foreach (var item in ViewBag.brch)
+    {
+        <option>@item</option>
+    }
+</select>
+@((int)ViewData["Temp"]+10)
