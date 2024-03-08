@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
         }
 
         // Bind on collection 
-        public IActionResult testdic(Dictionary<string,int>phones, string name)
+         public IActionResult testdic(Dictionary<string,int>phones, string name)
         {
             return Content($"Name = {name} , Phone Number is = {phones[name]}");
         }
